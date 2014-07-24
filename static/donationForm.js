@@ -12,4 +12,15 @@ $(function() {
     $('input[name="level_id"]').change(function() {
         $("#other-amount").prop("disabled", !$("#level-other").is(":checked"));
     });
+
+    $('#donate-submit').click(function() {
+        $(this).hide();
+        $('#donate-processing').show();
+    });
 });
+
+function donateCallback(data) {
+    console.log(data);
+    var invoiceURL = data.donationResponse.donation.bitcoin_invoice_url;
+    window.location.href = invoiceURL;
+}
