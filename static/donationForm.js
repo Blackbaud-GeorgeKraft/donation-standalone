@@ -8,4 +8,8 @@ $(function() {
     });
 
     luminateExtend.api.bind();
+
+    $('input[name="level_id"]').change(function() {
+        $("#other-amount").prop("disabled", !$("#level-other").is(":checked"));
+    });
 });
