@@ -32,8 +32,16 @@
     <!--[if gte IE 9]><!-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <!--<![endif]-->
+  	<script language="JavaScript"> 
+		function showTabs() {
+		  $('#myTab a').click(function (e) {
+  			e.preventDefault()
+  			$(this).tab('show')})
+
+		}
+  	</script>
   </head>
-  <body>
+  <body onload="showHelpDiv()">
     <div class="container">
       <div class="page-header">
         <h1>Donate</h1>
@@ -218,49 +226,74 @@
         <div class="panel panel-default">
           <div class="panel-heading">Payment Information</div>
           <div class="panel-body">
-            <div class="form-group">
-              <label class="col-sm-3 col-md-2 control-label">Card Number:</label>
-              <div class="col-sm-8 col-md-6">
-                <input type="text" class="form-control" name="card_number">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 col-md-2 control-label">CVV:</label>
-              <div class="col-sm-2 col-md-1">
-                <input type="text" class="form-control" name="card_cvv">
-              </div>
-            </div>
-            <div class="form-group date-form-group">
-              <label class="col-sm-3 col-md-2 control-label">Expiration Date:</label>
-              <div class="col-sm-3 col-md-2">
-                <select class="form-control" name="card_exp_date_month">
-                  <option>Month</option>
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                  <option value="06">06</option>
-                  <option value="07">07</option>
-                  <option value="08">08</option>
-                  <option value="09">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <select class="form-control" name="card_exp_date_year">
-                  <option>Year</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                </select>
-              </div>
-            </div>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+			  <li class="active"><a href="#creditcard" role="tab" data-toggle="tab">Credit Card</a></li>
+			  <li><a href="#paypal" role="tab" data-toggle="tab">Paypal</a></li>
+			  <li><a href="#bitcoin" role="tab" data-toggle="tab">Bitcoin</a></li>
+			  <li><a href="#blood" role="tab" data-toggle="tab">Blood</a></li>
+			  <li><a href="#ACH" role="tab" data-toggle="tab">ACH</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  <div class="tab-pane active" id="creditcard"><br/>
+				<div class="form-group">
+	              <label class="col-sm-3 col-md-2 control-label">Card Number:</label>
+	              <div class="col-sm-8 col-md-6">
+	                <input type="text" class="form-control" name="card_number">
+	              </div>
+	            </div>
+	            <div class="form-group">
+	              <label class="col-sm-3 col-md-2 control-label">CVV:</label>
+	              <div class="col-sm-2 col-md-1">
+	                <input type="text" class="form-control" name="card_cvv">
+	              </div>
+	            </div>
+	            <div class="form-group date-form-group">
+	              <label class="col-sm-3 col-md-2 control-label">Expiration Date:</label>
+	              <div class="col-sm-3 col-md-2">
+	                <select class="form-control" name="card_exp_date_month">
+	                  <option>Month</option>
+	                  <option value="01">01</option>
+	                  <option value="02">02</option>
+	                  <option value="03">03</option>
+	                  <option value="04">04</option>
+	                  <option value="05">05</option>
+	                  <option value="06">06</option>
+	                  <option value="07">07</option>
+	                  <option value="08">08</option>
+	                  <option value="09">09</option>
+	                  <option value="10">10</option>
+	                  <option value="11">11</option>
+	                  <option value="12">12</option>
+	                </select>
+	              </div>
+	              <div class="col-sm-3 col-md-2">
+	                <select class="form-control" name="card_exp_date_year">
+	                  <option>Year</option>
+	                  <option value="2014">2014</option>
+	                  <option value="2015">2015</option>
+	                  <option value="2016">2016</option>
+	                  <option value="2017">2017</option>
+	                  <option value="2018">2018</option>
+	                  <option value="2019">2019</option>
+	                </select>
+	              </div>
+	            </div>
+	          </div>
+			  <div class="tab-pane" id="paypal"><br/>paypal</div>
+			  <div class="tab-pane" id="bitcoin"><br/>bitcoin</div>
+			  <div class="tab-pane" id="blood"><br/>blood</div>
+			  <div class="tab-pane" id="ACH"><br/>ACH</div>
+			</div>
+
+
+          	<!-- <input id="CreditCard" type="radio" name="paymentType" checked="checked" value="true">CC</input>
+          	<input id="Paypal" type="radio" name="paymentType" value="false">Paypal</input>
+          	<input id="Bitcoin" type="radio" name="paymentType" value="false">Bitcoin</input>
+          	<input id="ACH" type="radio" name="paymentType" value="false">ACH</input> -->
+          
           </div>
         </div>
         
