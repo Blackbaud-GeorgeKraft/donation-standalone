@@ -4,8 +4,8 @@ $(function() {
     luminateExtend.init({
         apiKey: 'whee', 
         path: {
-            nonsecure: 'http://localhost/site/', 
-            secure: 'https://localhost/site/'
+            nonsecure: 'http://172.20.7.182/site/', 
+            secure: 'https://172.20.7.182/site/'
         }
     });
 });
